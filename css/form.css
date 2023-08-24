@@ -1,0 +1,130 @@
+.input[type=text]{
+
+}
+.input[type=checkbox]{
+    
+}
+.input[type=radio]{
+    
+}
+.input[type=submit]{
+    
+}
+
+
+.container{
+    max-width: 1280px;
+    margin:0 auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.title{
+    font-size: 2.6em;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.subtitle{
+    color: #666;
+}
+.subject{
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+#form{
+    padding: 3rem 0;
+}
+.formlist{
+    border-top: 1px solid #222;
+    padding: 3rem 0;
+}
+.formlist li{
+    display: flex;
+    font-size: 1.2em;
+    padding: 0.5em 0;
+}
+.formlist li strong{
+    width: 20%;
+    font-weight: bold;
+}
+/* 체크를 부트아이콘으로 넣고 인라인블럭 설정으로 동그라미안체크모양 만들기 */
+.formlist .before input[type=checkbox] + label::before{
+    content:'\F272';
+    font-family: bootstrap-icons;
+    display: inline-block;
+    border: 1px solid #666;
+    width: 1.6em; line-height: 1.6em;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 8px;
+}
+/* checked만 넣으면 완성 */
+.formlist .before input[type=checkbox]:checked + label::before{
+    background-color: #ff6600;
+    color: white;
+    border-color: #ff6600;
+}
+
+/* label스스로 만들어  */
+.formlist .label input[type=checkbox] + label{
+    font-family: bootstrap-icons;
+    display: inline-block;
+    border: 1px solid #666;
+    line-height: 1.6em;
+    text-align: center;
+    margin-right: 8px;
+    padding: 0 1em;
+}
+
+.formlist .label input[type=checkbox]:checked + label{
+    background-color: #ff6600;
+    color: white;
+    
+}
+
+
+
+/* 체크박스 없애기 */
+.formlist input[type="checkbox"]{
+    display: none;
+}
+
+[name="fm"] [type=submit]{
+    background-color: #ff6600;
+    color: white;
+    line-height: 3;
+    font-size: 1.5em;
+    letter-spacing: -0.083em;
+    border: 0;
+    border-radius: 1em;
+    padding: 0 1.8em;
+    margin: 1rem auto;
+    
+}
+#agree{display: none;}
+#agree + label{
+    display: flex;
+    align-items: center;
+}
+
+#agree + label:before{
+    content:"\F5D5";
+    color:#666;
+    font-family: bootstrap-icons;
+    font-size: 1.4em;
+    margin-right: 10px;
+
+}
+#agree:checked + label:before{
+    content:"\F5D6";
+    color:blue;
+}
+.agreebox{
+    font-size: 1.2em;
+    margin:1rem 0;
+    
+}
