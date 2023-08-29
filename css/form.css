@@ -10,11 +10,25 @@
 .input[type=submit]{
     
 }
-
+/* 크롬에서 나오는 아웃라인 요소검사로 hov로 찾아  복붙 none처리 */
+/* reset cdn으로 처리할수도 있음 */
+:focus-visible {
+    outline:none
+}
 
 .container{
     max-width: 1280px;
     margin:0 auto;
+}
+
+.abs{
+    position: absolute;
+}
+.rel{
+    position: relative;
+}
+.d-flex{
+    display: flex;
 }
 
 .text-center{
@@ -33,13 +47,17 @@
 .subject{
     font-size: 2em;
     margin-bottom: 1rem;
+    margin-top: 3rem;
+    
 }
-
 #form{
     padding: 3rem 0;
 }
-.formlist{
-    border-top: 1px solid #222;
+.border-bottom{
+    border-bottom: 1px solid #222;
+    padding-bottom: 2rem;
+}
+.formlist{    
     padding: 3rem 0;
 }
 .formlist li{
@@ -127,4 +145,101 @@
     font-size: 1.2em;
     margin:1rem 0;
     
+}
+
+.nm + span{
+    display: none;
+}
+.nm:focus + span{
+    display: inline-block;
+    color: red;
+}
+.mx-4{
+    margin:0 0.25px;
+}
+.mx-8{
+    margin: 0 8px;
+}
+input.normal{
+    font-size: 1rem;
+    line-height: 2.5;
+    border: 1px solid #666;
+    border-radius: 8px;
+    text-indent: 1rem;
+    /* margin:0 8px; */
+}
+
+.hp input{
+
+}
+       
+
+/* 띄어쓰기 하면 부모자식으로 인식 */
+select[name^="area"]{
+    width: 16rem;
+    font-size: 1rem;
+    line-height: 2.5;
+    height: 2.5rem;
+}
+.select{
+    margin-bottom: 80px;
+}
+.familyBox{
+    width: 16rem;
+    cursor: pointer;
+}
+.familyBox h3{
+    border: 1px solid #666;
+    font-size: 1rem;
+    line-height: 2.5;    
+    text-align: center;
+    position: relative;
+    /* background-color: white;
+    z-index:10; */ 
+}
+.familyBox ul{
+    bottom: calc(100% - 1px);
+    left:0; right:0;
+    border: 1px solid #666;
+    border-bottom: 0;
+    font-size: 1rem;
+    line-height: 2.5;
+    background-color: white;
+    text-indent: 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s; /*원하는곳만 트렌지션*/
+}
+.familyBox:hover ul{
+    max-height: 450px;
+    bottom:100%;
+}
+.familyBox h3:after{
+    content: "\F286";
+    font-family: bootstrap-icons;
+    position: absolute;
+    right:1rem;
+    
+}
+.familyBox:hover h3:after{
+    content: "\F282";
+}
+.formlist.rwd{
+    width: 16rem;
+}
+.formlist.rwd .nm{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.formlist.rwd li{
+    display: block;
+}
+.hp p{
+    justify-content: space-between;
+    align-items: center;
+}
+.hp p input{
+    /* flex-grow: 1; 똑같이 나눠먹어라 */
+    width: calc(33.333% - 1rem);
 }

@@ -16,7 +16,51 @@
             <p class="subtitle text-center">뇌새김 학습에 궁금증을 해결해드립니다</p>    
             <form action="http://www.naver.com" name="fm">
             <div>
-                <p class="subject">기본정보</p>
+                <p class="subject border-bottom">반응형을 고려한 폼제작</p>
+                <ul class="formlist rwd">
+                    <li> <!-- input 다음에 뭐 들어오면 안되고 span 바로 들어와야 함 왜냐면 input+span -->
+                        <p>                       
+                          <input type="text" required class="normal nm" placeholder="성함을 입력해주세요." name="nm"> 
+                          <span>8자이내의 영문으로 기입해주세요.</span>
+                        </p>
+                    </li>
+                    <li class="hp"> 
+                        <p class="d-flex select">                       
+                          <input type="text" required class="normal" placeholder="***" name="hp[]"> 
+                          <span class="mx-4">-</span>
+                          <input type="text" required class="normal" placeholder="****" name="hp[]"> 
+                          <span class="mx-4">-</span>
+                          <input type="text" required class="normal" placeholder="****" name="hp[]">           
+                            
+                        </p>
+                    </li>                  
+                </ul>
+                <div class="d-flex">
+                    <!-- name안에서 이름 겹치면 안되고 id안에서 이름 겹치면 안됨 그래서 name과 아이디 이름같이 가능 -->
+                    <!-- 바로 폼으로 전송됨  스타일 안먹힘-->
+                    <select name="area" id="area">
+                        <option selected>국가를 선택해주세요.</option>
+                        <option value="k">대한민국</option>
+                        <option value="a">미국</option>
+                        <option value="c">중국</option>
+                        <option value="j">일본</option>
+                    </select>
+                    <!-- 자바스크립트로 거쳐서 전송됨 스타일 잘먹힘-->
+                    <div class="familyBox rel mx-8">
+                        <h3>국가를 선택해주세요.</h3>
+                        <ul class="abs">
+                            <li data-area="k">대한민국</li>
+                            <li data-area="a">미국</li>
+                            <li data-area="c">중국</li>
+                            <li data-area="j">일본</li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div>
+                <p class="subject border-bottom">기본정보</p>
                 <ul class="formlist">
                     <li class="before">
                         <strong>영어학습경험</strong>
@@ -44,7 +88,7 @@
                 </ul>
             </div>
             <div>
-                <p class="subject">개인정보 수집 및 이용 동의</p>
+                <p class="subject border-bottom">개인정보 수집 및 이용 동의</p>
                  <!-- div.agreebox>input[type=checkbox]#agree+label[for=agree]{동의합니다.}라벨의 주인은 체크박스. 아이디명과 for이름 같아야 함 -->
                  <!-- 접근성지키는것 장애인분들위해..네이버는 체크박스가 아니라 가상선택자로 처리함  회원가입부분 -->
                 <div class="agreebox">
